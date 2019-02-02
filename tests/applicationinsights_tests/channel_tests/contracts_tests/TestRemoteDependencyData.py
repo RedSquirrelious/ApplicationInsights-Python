@@ -158,3 +158,7 @@ class TestRemoteDependencyData(unittest.TestCase):
         expected = '{"ver":42,"name":"Test string","duration":1.5,"success":true,"properties":{"key1":"test value 1","key2":"test value 2"}}'
         self.assertEqual(expected, actual)
 
+    def test_context_property_works_as_expected(self):
+        item = RemoteDependencyData()
+        actual = item._context
+        self.assertNotEqual(None, actual)
