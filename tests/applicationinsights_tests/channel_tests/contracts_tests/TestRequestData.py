@@ -16,7 +16,7 @@ class TestRequestData(unittest.TestCase):
     def test_construct(self):
         item = RequestData()
         self.assertNotEqual(item, None)
-    
+
     def test_ver_property_works_as_expected(self):
         expected = 42
         item = RequestData()
@@ -27,7 +27,7 @@ class TestRequestData(unittest.TestCase):
         item.ver = expected
         actual = item.ver
         self.assertEqual(expected, actual)
-    
+
     def test_id_property_works_as_expected(self):
         expected = 'Test string'
         item = RequestData()
@@ -38,7 +38,7 @@ class TestRequestData(unittest.TestCase):
         item.id = expected
         actual = item.id
         self.assertEqual(expected, actual)
-    
+
     def test_name_property_works_as_expected(self):
         expected = 'Test string'
         item = RequestData()
@@ -49,7 +49,7 @@ class TestRequestData(unittest.TestCase):
         item.name = expected
         actual = item.name
         self.assertEqual(expected, actual)
-    
+
     def test_start_time_property_works_as_expected(self):
         expected = 'Test string'
         item = RequestData()
@@ -60,7 +60,12 @@ class TestRequestData(unittest.TestCase):
         item.start_time = expected
         actual = item.start_time
         self.assertEqual(expected, actual)
-    
+
+    def test_context_property_works_as_expected(self):
+        item = RequestData()
+        actual = item._context
+        self.assertNotEqual(None, actual)
+
     def test_duration_property_works_as_expected(self):
         expected = 'Test string'
         item = RequestData()
@@ -71,7 +76,7 @@ class TestRequestData(unittest.TestCase):
         item.duration = expected
         actual = item.duration
         self.assertEqual(expected, actual)
-    
+
     def test_response_code_property_works_as_expected(self):
         expected = 'Test string'
         item = RequestData()
@@ -82,7 +87,7 @@ class TestRequestData(unittest.TestCase):
         item.response_code = expected
         actual = item.response_code
         self.assertEqual(expected, actual)
-    
+
     def test_success_property_works_as_expected(self):
         expected = True
         item = RequestData()
@@ -93,7 +98,7 @@ class TestRequestData(unittest.TestCase):
         item.success = expected
         actual = item.success
         self.assertEqual(expected, actual)
-    
+
     def test_http_method_property_works_as_expected(self):
         expected = 'Test string'
         item = RequestData()
@@ -104,7 +109,7 @@ class TestRequestData(unittest.TestCase):
         item.http_method = expected
         actual = item.http_method
         self.assertEqual(expected, actual)
-    
+
     def test_url_property_works_as_expected(self):
         expected = 'Test string'
         item = RequestData()
@@ -115,17 +120,17 @@ class TestRequestData(unittest.TestCase):
         item.url = expected
         actual = item.url
         self.assertEqual(expected, actual)
-    
+
     def test_properties_property_works_as_expected(self):
         item = RequestData()
         actual = item.properties
         self.assertNotEqual(actual, None)
-    
+
     def test_measurements_property_works_as_expected(self):
         item = RequestData()
         actual = item.measurements
         self.assertNotEqual(actual, None)
-    
+
     def test_serialize_works_as_expected(self):
         item = RequestData()
         item.ver = 42
