@@ -16,7 +16,7 @@ class TestMessageData(unittest.TestCase):
     def test_construct(self):
         item = MessageData()
         self.assertNotEqual(item, None)
-    
+
     def test_ver_property_works_as_expected(self):
         expected = 42
         item = MessageData()
@@ -27,7 +27,7 @@ class TestMessageData(unittest.TestCase):
         item.ver = expected
         actual = item.ver
         self.assertEqual(expected, actual)
-    
+
     def test_message_property_works_as_expected(self):
         expected = 'Test string'
         item = MessageData()
@@ -38,7 +38,7 @@ class TestMessageData(unittest.TestCase):
         item.message = expected
         actual = item.message
         self.assertEqual(expected, actual)
-    
+
     def test_severity_level_property_works_as_expected(self):
         expected = object()
         item = MessageData()
@@ -49,12 +49,12 @@ class TestMessageData(unittest.TestCase):
         item.severity_level = expected
         actual = item.severity_level
         self.assertEqual(expected, actual)
-    
+
     def test_properties_property_works_as_expected(self):
         item = MessageData()
         actual = item.properties
         self.assertNotEqual(actual, None)
-    
+
     def test_serialize_works_as_expected(self):
         item = MessageData()
         item.ver = 42
@@ -66,3 +66,7 @@ class TestMessageData(unittest.TestCase):
         expected = '{"ver":42,"message":"Test string","severityLevel":{},"properties":{"key1":"test value 1","key2":"test value 2"}}'
         self.assertEqual(expected, actual)
 
+    def test_context_property_works_as_expected(self):
+        item = MessageData()
+        actual = item._context
+        self.assertNotEqual(None, actual)
